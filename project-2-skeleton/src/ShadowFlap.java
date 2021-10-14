@@ -1,4 +1,6 @@
 import bagel.*;
+import bagel.Font;
+import bagel.Image;
 import bagel.util.Rectangle;
 
 import java.util.ArrayList;
@@ -8,7 +10,7 @@ import java.util.Random;
  * Skeleton Code for SWEN20003 Project 2, Semester 2, 2021
  *
  * Please filling your name below
- * @author:
+ * @author: WENTAO LIU
  */
 public class ShadowFlap extends AbstractGame {
     private final Image PLASTIC_PIPE = new Image("res/level/plasticPipe.png");
@@ -30,6 +32,13 @@ public class ShadowFlap extends AbstractGame {
     private boolean isLevelUp = false;
     private ArrayList<PipeSet> plasticPipeSet = new ArrayList<>();;
     private ArrayList<PipeSet> pipeSets = new ArrayList<>();
+    private int timeScale = 1;
+    private final int MAX_SCALE = 5;
+    private final int MIN_SCALE = 1;
+    private int frameCount = 0;
+    private final double SWITCH_FRAME = 100;
+    private final String LEVEL_UP_MES = "LEVEL_UP!";
+    private boolean level
 
     public ShadowFlap() {
         super(1024, 768, "ShadowFlap");
@@ -94,9 +103,15 @@ public class ShadowFlap extends AbstractGame {
             String finalScoreMsg = FINAL_SCORE_MSG + score;
             FONT.drawString(finalScoreMsg, (Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
         }
+    }
 
-
-
+    public void updateTimeScale(Input input){
+        if (input.wasPressed(Keys.L)) && timeScale < MAX_SCALE){
+            timeScale += 1;
+        }
+        if (input.wasPressed(Keys.K)) && timeScale > MIN_SCALE{
+            timeScale -= 1;
+        }
     }
 
 }

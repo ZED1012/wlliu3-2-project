@@ -39,4 +39,3 @@ public class Bird {
 
     public double Sety(){return y;}
 }
-

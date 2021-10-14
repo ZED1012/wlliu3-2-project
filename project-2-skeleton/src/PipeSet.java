@@ -4,6 +4,8 @@ import bagel.Window;
 import bagel.util.Point;
 import bagel.util.Rectangle;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -49,6 +51,14 @@ public class PipeSet {
     public Rectangle getBottomBox() {
         return PIPE_IMAGE.getBoundingBoxAt(new Point(pipeX, BOTTOM_PIPE_Y));
 
+    }
+
+    public void updateSpeed(int timeScale){
+        pipeSpeed = 5;
+        for (int i = 1; i < timeScale; i++){
+            pipeSpeed = pipeSpeed * 1.5;
+        }
+        pipeX -= pipeSpeed;
     }
 
 }

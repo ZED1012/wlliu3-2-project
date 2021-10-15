@@ -33,26 +33,20 @@ public class PipeSet {
         if (! isCollide){
             PIPE_IMAGE.draw(pipeX,TOP_PIPE_Y);
             PIPE_IMAGE.draw(pipeX,BOTTOM_PIPE_Y,ROTATOR);
+            if(PIPE_IMAGE == STEEL_PIPE_IMAGE && CountFrame>FLAME_START){
+                FLAME_IMAGE.draw(pipeX,TOP_PIPE_Y+Window.getHeight()/2+10);
+                FLAME_IMAGE.draw(pipeX,BOTTOM_PIPE_Y-Window.getHeight()/2-10,ROTATOR);
+            }
+            if(CountFrame >= FLAME_END){
+                CountFrame =  0;
+            }
         }
     }
     public void update(int timeScale){
         renderPipSet();
-        updateSpeed(timeScale);
+        pipeX -= pipeSpeed;
     }
-    public void updateScore(PipeSet pipeSet){
-        if (bird.getX() > pipeSet.getTopBox().right() && !pipeSet.getIsPass()){
-            score += 1;
-            pipeSet.setIsPass(true);
-        }
-        String scoreMsg = SCORE_MSG + score;
-        FONT.drawString(scoreMsg, 100, 100);
-        if(score == 10 && !isLevelUp){
-            LevelUp = true;
-        }
-        if (score == 30) {
-            win = true;
-        }
-        }
+
     public PipeSet(Image pipeImage, boolean isLevelUp) {
         LevelUp = isLevelUp;
         PIPE_IMAGE = pipeImage;

@@ -25,9 +25,11 @@ public class ShadowFlap extends AbstractGame {
     private final String SCORE_MSG = "SCORE: ";
     private final String FINAL_SCORE_MSG = "FINAL SCORE: ";
     private final String LEVEL_UP_MES = "LEVEL_UP!";
+    private final String LEVEL_1_MEG = "LEVEL_UP!";
     private final int FONT_SIZE = 48;
     private final int SCORE_MSG_OFFSET = 75;
     private Bird bird;
+    private LifeBar lifebar;
     private int score;
     private boolean gameOn;
     private boolean collision;
@@ -43,6 +45,8 @@ public class ShadowFlap extends AbstractGame {
     private boolean levelUpCount = false;
     private int levelUpCount = 0;
     private boolean flameCollision = false;
+
+    public int level = 0;
 
     public ShadowFlap() {
         super(1024, 768, "ShadowFlap");
@@ -97,18 +101,28 @@ public class ShadowFlap extends AbstractGame {
     }
     public void renderWinScreen() {
         FONT.drawString(CONGRATS_MSG, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
-        String finalScoreMsg = FINAL_SCORE_MSG + score;
-        FONT.drawString(finalScoreMsg, (Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
     }
     public void  renderLevelUpScreen(){
         FONT.drawString(LEVEL_UP_MES, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
+        String finalScoreMsg = FINAL_SCORE_MSG + score;
+        FONT.drawString(finalScoreMsg, (bagel.Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (bagel.Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
     }
     public void renderInstructionScreen(Input input) {
-        FONT.drawString(INSTRUCTION_MSG, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
-        if(input.wasPressed(Keys.S)&& );
+        if (level == 1){
+            FONT.drawString(LEVEL_1_MEG,(bagel.Window.getWidth()/2-(FONT.getWidth(LEVEL_1_MEG)/2)),(bagel.Window.getHeight()/2-(FONT_SIZE/2))+68);
+        }
+        FONT.drawString(INSTRUCTION_MSG, (bagel.Window.getWidth()/2.0-(FONT.getWidth(INSTRUCTION_MSG)/2.0)), (bagel.Window.getHeight()/2.0-(FONT_SIZE/2.0)));
         if (input.wasPressed(Keys.SPACE)){
             gameOn = true;
         }
+    }
+    public boolean overlap(Rectangle weaponBox, ArrayList<PipeSet>pipeSet){
+        for(PipeSet pipe:pipeSet){
+            if(detectCollision(weaponBox,pipe.getTopBox(),pipe.getBottomBoxFlame())){
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -128,9 +142,9 @@ public class ShadowFlap extends AbstractGame {
             bagel.Window.close();}
         if (! gameOn){renderInstructionScreen(input);}
         if (LifeBar.getLife() == 0 ){renderGameOverScreen();}
-        if (birdOutofBound()){
-            if (lifeBar.getLife() > 0){
-                lifeBar.setLife(lifeBar.getLife()-1);
+        if (birdOutOfBound()){
+            if (lifebar.getLife() > 0){
+                lifebar.setLife(lifebar.getLife()-1);
                 bird.setY(350);
             }
         }
@@ -147,7 +161,7 @@ public class ShadowFlap extends AbstractGame {
             timeScale -= 1;
         }
     }
-    if (gameOn && !(LifeBar.getlife() == 0) && !win){
+    if (gameOn && !(LifeBar.getLife() == 0) && !win){
         if(!leveUp){
             updateTimeScale(input);
             if (frameCount % 100 == 0){

@@ -1,4 +1,6 @@
 import bagel.Input;
+import bagel.Image;
+import bagel.Window;
 import bagel.Keys;
 import bagel.util.Point;
 import bagel.util.Rectangle;

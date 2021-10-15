@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file:///production/wlliu3-2-project" />
+    <output-test url="file:///test/wlliu3-2-project" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.idea" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project-2-skeleton" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project-2-skeleton/res" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project-2-skeleton/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project-2-skeleton/target" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

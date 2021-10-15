@@ -3,6 +3,8 @@ import bagel.Input;
 import bagel.Keys;
 import bagel.util.Point;
 import bagel.util.Rectangle;
+
+import java.awt.*;
 import java.lang.Math;
 
 public class Bird {
@@ -18,6 +20,9 @@ public class Bird {
     private double y;
     private double yVelocity;
     private Rectangle boundingBox;
+    private boolean holdWeapon = false;
+    public boolean getHoldWeapon(){return this.holdWeapon;}
+    public void setHoldWeapon(boolean holdWeapon){this.holdWeapon = holdWeapon;}
 
     public Bird() {
         y = INITIAL_Y;

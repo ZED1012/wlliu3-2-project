@@ -13,7 +13,7 @@ import java.util.Random;
 public class PipeSet {
     private final Image PIPE_IMAGE = new Image("res/pipe.png");
     private final int PIPE_GAP = 168;
-    private double PIPE_SPEED = 5;
+    private double pipeSpeed = 5;
     private final double TOP_PIPE_Y = -PIPE_GAP / 2.0;
     private final double BOTTOM_PIPE_Y = Window.getHeight() + PIPE_GAP / 2.0;
     private final DrawOptions ROTATOR = new DrawOptions().setRotation(Math.PI);
@@ -21,6 +21,39 @@ public class PipeSet {
     private final double RANDOM_POSITION;
     private List<Integer> pipeTypes = new ArrayList<>();
     private boolean LevelUp;
+    private boolean isCollide = false;
+    private boolean isPass = false;
+    public boolean getIsPass(){return this.isPass;}
+    public void setIsPass(boolean isPass){this.isPass = isPass;}
+
+
+    public void renderPipSet(){
+        if (! isCollide){
+            PIPE_IMAGE.draw(pipeX,TOP_PIPE_Y);
+            PIPE_IMAGE.draw(pipeX,BOTTOM_PIPE_Y,ROTATOR);
+        }
+    }
+    public void update(int timeScale){
+        renderPipSet();
+        updateSpeed(timeScale);
+    }
+    public void updateScore(PipeSet pipeSet){
+        if (bird.getX() > pipeSet.getTopBox().right() && !pipeSet.getIsPass()){
+            score += 1;
+            pipeSet.setIsPass(true);
+        }
+        String scoreMsg = SCORE_MSG + score;
+        FONT.drawString(scoreMsg, 100, 100);
+        if(score == 10 && !isLevelUp){
+            LevelUp = true;
+        }
+        if (score == 30) {
+            win = true;
+        }
+        }
+    }
+
+
 
     public PipeSet(Image pipeImage, boolean isLevelUp) {
         LevelUp = isLevelUp;

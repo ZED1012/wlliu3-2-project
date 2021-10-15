@@ -4,8 +4,6 @@ import bagel.Window;
 import bagel.util.Point;
 import bagel.util.Rectangle;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -14,8 +12,8 @@ public class PipeSet {
     private final Image PIPE_IMAGE = new Image("res/pipe.png");
     private final int PIPE_GAP = 168;
     private double pipeSpeed = 5;
-    private final double TOP_PIPE_Y = -PIPE_GAP / 2.0;
-    private final double BOTTOM_PIPE_Y = Window.getHeight() + PIPE_GAP / 2.0;
+    private final double TOP_PIPE_Y;
+    private final double BOTTOM_PIPE_Y;
     private final DrawOptions ROTATOR = new DrawOptions().setRotation(Math.PI);
     private double pipeX = Window.getWidth();
     private final double RANDOM_POSITION;

@@ -17,17 +17,17 @@ import java.util.Random;
 public class ShadowFlap extends AbstractGame {
     private final Image PLASTIC_PIPE = new Image("res/level/plasticPipe.png");
     private final Image STEEL_PIPE = new Image("res/level-1/steelPipe.png");
-    private final Image LEVEL0_BACKGROUND_IMAGE = new Image("res/level-0/background.png");
+    private final Image LEVEL0_BACKGROUND = new Image("res/level-0/background.png");
     private final Image LEVEL1_BACKGROUND = new Image("res/level-1/background.png");
     private final Image ROCK = new Image("res/level-1/rock.png");
     private final Image BOMB = new Image("res/level-1/bomb.png");
+    private final Font FONT = new Font("res/font/slkscr.ttf", FONT_SIZE);
     private final String INSTRUCTION_MSG = "PRESS SPACE TO START";
     private final String GAME_OVER_MSG = "GAME OVER!";
     private final String CONGRATS_MSG = "CONGRATULATIONS!";
     private final String SCORE_MSG = "SCORE: ";
     private final String FINAL_SCORE_MSG = "FINAL SCORE: ";
     private final int FONT_SIZE = 48;
-    private final Font FONT = new Font("res/font/slkscr.ttf", FONT_SIZE);
     private final int SCORE_MSG_OFFSET = 75;
     private Bird bird;
     private int score;
@@ -93,7 +93,7 @@ public class ShadowFlap extends AbstractGame {
     @Override
     public void update(INput input) {
         if(! isLevelUp){
-            LEVEL0_BACKGROUND_IMAGE.draw(Window.getWidth() /2.0 ,Window.getHeight()/2.0);
+            LEVEL0_BACKGROUND.draw(Window.getWidth() /2.0 ,Window.getHeight()/2.0);
         }else{
             LEVEL1_BACKGROUND.draw(Window.getWidth() /2.0 ,Window.getHeight()/2.0);
         }

@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa614286-727f-4264-853c-065ad234c6a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/wlliu3-2-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-2-skeleton/src/Bomb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-2-skeleton/src/PlasticPipeSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-2-skeleton/src/Rock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-2-skeleton/src/SteelPipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-2-skeleton/src/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/Bird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/LifeBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/LifeBar.java" afterDir="false" />
+    <list default="true" id="73445150-b702-4349-8bb1-232044fe95b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wlliu3-2-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wlliu3-2-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__io_github_eleanor_em_bagel_1_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_assimp_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_assimp_natives_windows_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_glfw_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_glfw_natives_windows_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_natives_windows_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_openal_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_openal_natives_windows_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_opengl_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_opengl_natives_windows_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_stb_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_stb_natives_windows_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/bagel.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/PipeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/PipeSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/ShadowFlap.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/ShadowFlap.java" afterDir="false" />
     </list>
@@ -21,17 +39,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1zUQDFbRg5XsjbYT9yJvyZXpNi0" />
+  <component name="ProjectId" id="1zWaIMTMlZMHc0AWxewvEu6mK11" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,36 +50,17 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\13644\Desktop\wlliu3-2-project\.idea" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="wlliu3-2-project" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ShadowFlap" />
-      <module name="wlliu3-2-project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fa614286-727f-4264-853c-065ad234c6a5" name="Default Changelist" comment="" />
-      <created>1634200067031</created>
+      <changelist id="73445150-b702-4349-8bb1-232044fe95b1" name="Default Changelist" comment="" />
+      <created>1634266218790</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1634200067031</updated>
+      <updated>1634266218790</updated>
     </task>
     <servers />
   </component>
@@ -82,6 +74,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -6,33 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="73445150-b702-4349-8bb1-232044fe95b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/wlliu3-2-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wlliu3-2-project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__io_github_eleanor_em_bagel_1_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_assimp_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_assimp_natives_windows_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_glfw_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_glfw_natives_windows_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_natives_windows_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_openal_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_openal_natives_windows_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_opengl_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_opengl_natives_windows_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_stb_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/libraries/Maven__org_lwjgl_lwjgl_stb_natives_windows_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2-skeleton/bagel.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/Bird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/LifeBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/LifeBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/PipeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/PipeSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/ShadowFlap.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/ShadowFlap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +31,42 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShadowFlap" />
+      <module name="bagel" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bagel" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/project-2-skeleton" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Maven.bagel" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -74,5 +89,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

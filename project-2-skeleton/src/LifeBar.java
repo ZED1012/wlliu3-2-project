@@ -5,13 +5,13 @@ public class LifeBar {
     private final Image Full_HEART = new Image("res/level/fullLife.png");
     private final Image No_HEART = new Image("res/level/nolife.png");
     private int maxLife;
-    private int Life;
+    private int life;
     public LifeBar(){
         maxLife = 3;
-        Life = 3;
+        life = 3;
     }
-    public int getCurrentLife(){ return this.Life; }
-    public void setCurrentLife(int currentLife){this.Life = currentLife; }
+    public int getlife(){ return this.life; }
+    public void setlife(int currentLife){this.life = life; }
 
     public void setMaxLife(int maxLife) {
         this.maxLife = maxLife;
@@ -19,4 +19,6 @@ public class LifeBar {
     public void update(){
         renderLifeBar();
     }
+
+
 }

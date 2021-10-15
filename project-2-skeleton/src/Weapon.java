@@ -1,3 +1,6 @@
+import bagel.Input;
+import bagel.Keys;
+
 import java.awt.*;
 
 public class Weapon {
@@ -49,5 +52,11 @@ public class Weapon {
         if(!dissappear && !overlap){
             WEAPON_IMAGE.draw(weaponX,weaponY);
         }
+    }
+    public double setweaponX(){
+        return this.weaponX;
+    }
+    public double setweaponY(){
+        return this.weaponY;
     }
 }

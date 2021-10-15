@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 public class PipeSet {
-    private final Image PIPE_IMAGE = new Image("res/pipe.png");
+    private Image PIPE_IMAGE = new Image("res/pipe.png");
     private final int PIPE_GAP = 168;
     private double pipeSpeed = 5;
     private final double TOP_PIPE_Y;
@@ -49,10 +49,6 @@ public class PipeSet {
             win = true;
         }
         }
-    }
-
-
-
     public PipeSet(Image pipeImage, boolean isLevelUp) {
         LevelUp = isLevelUp;
         PIPE_IMAGE = pipeImage;
@@ -70,9 +66,6 @@ public class PipeSet {
         }
         TOP_PIPE_Y = RANDOM_POSITION - PIPE_IMAGE.getHeight() / 2;
         BOTTOM_PIPE_Y = PIPE_IMAGE.getHeight() / 2 + RANDOM_POSITION + PIPE_GAP;
-
-
-
     }
     public Rectangle getTopBox() {
         return PIPE_IMAGE.getBoundingBoxAt(new Point(pipeX, TOP_PIPE_Y));
@@ -91,5 +84,11 @@ public class PipeSet {
         }
         pipeX -= pipeSpeed;
     }
+    public double getTopBox(){
+        return this.pipeX
+    }
 
 }
+
+
+

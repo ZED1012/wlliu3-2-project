@@ -30,6 +30,8 @@ public class Bird {
         boundingBox = WING_DOWN_IMAGE.getBoundingBoxAt(new Point(X, y));
     }
 
+
+
     public double getY() {
         return y;
     }

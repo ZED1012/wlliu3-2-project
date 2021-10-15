@@ -4,6 +4,7 @@ import bagel.Image;
 import bagel.util.Rectangle;
 
 import java.awt.*;
+import java.awt.Window;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Random;
@@ -17,7 +18,7 @@ import java.util.Random;
 public class ShadowFlap extends AbstractGame {
     private final Image PLASTIC_PIPE = new Image("res/level/plasticPipe.png");
     private final Image STEEL_PIPE = new Image("res/level-1/steelPipe.png");
-    private final Image LEVEL0_BACKGROUND = new Image("res/level-0/background.png");
+    private final Image LEVEL0_BACKGROUND = new Image("C:/Users/13644/Desktop/wlliu3-2-project/res/level-0/background.png");
     private final Image LEVEL1_BACKGROUND = new Image("res/level-1/background.png");
     private final Image ROCK = new Image("res/level-1/rock.png");
     private final Image BOMB = new Image("res/level-1/bomb.png");
@@ -27,6 +28,7 @@ public class ShadowFlap extends AbstractGame {
     private final String CONGRATS_MSG = "CONGRATULATIONS!";
     private final String SCORE_MSG = "SCORE: ";
     private final String FINAL_SCORE_MSG = "FINAL SCORE: ";
+    private final String LEVEL_UP_MES = "LEVEL_UP!";
     private final int FONT_SIZE = 48;
     private final int SCORE_MSG_OFFSET = 75;
     private Bird bird;
@@ -35,14 +37,14 @@ public class ShadowFlap extends AbstractGame {
     private boolean collision;
     private boolean win;
     private boolean isLevelUp = false;
-    private ArrayList<PipeSet> plasticPipeSet = new ArrayList<>();;
-    private ArrayList<PipeSet> pipeSets = new ArrayList<>();
+    private ArrayList<PipeSet> plasticPipeSet = new ArrayList<>();;// for level 0
+    private ArrayList<PipeSet> pipeSets = new ArrayList<>();// for level 1
     private int timeScale = 1;
     private final int MAX_SCALE = 5;
     private final int MIN_SCALE = 1;
     private int frameCount = 0;
     private final double SWITCH_FRAME = 100;
-    private final String LEVEL_UP_MES = "LEVEL_UP!";
+
     private boolean levelUpCount = false;
     private int levelUpCount = 0;
     private boolean flameCollision = false;
@@ -73,13 +75,13 @@ public class ShadowFlap extends AbstractGame {
         }
     }
     public class PlasticPipeSet extends PipeSet{
-        public PlasticPipeSet(Image pipImage_boolean isLevelUp){
+        public PlasticPipeSet(Image pipeImage, boolean isLevelUp){
             super(pipeImage, isLevelUp);
         }
 
     }
     public class SteelPipeSet extends PipeSet{
-        public SteelPipeSet(Image pipImage_boolean isLevelUp){
+        public SteelPipeSet(Image pipeImage, boolean isLevelUp){
             super(pipeImage, isLevelUp);
         }
 
@@ -91,13 +93,14 @@ public class ShadowFlap extends AbstractGame {
      * allows the game to exit when the escape key is pressed.
      */
     @Override
-    public void update(INput input) {
+    public void update(Input input) {
         if(! isLevelUp){
             LEVEL0_BACKGROUND.draw(Window.getWidth() /2.0 ,Window.getHeight()/2.0);
         }else{
             LEVEL1_BACKGROUND.draw(Window.getWidth() /2.0 ,Window.getHeight()/2.0);
         }
-        if (input.wasPressed(Keys.ESCAPE)){window.close();}
+        if (input.wasPressed(Keys.ESCAPE)){
+            bagel.Window.close();}
         if (! gameOn){renderInstructionScreen(input);}
         if (LifeBar.getLife() == 0 ){renderGameOverScreen();}
         if (birdOutofBound()){
@@ -126,10 +129,13 @@ public class ShadowFlap extends AbstractGame {
             String finalScoreMsg = FINAL_SCORE_MSG + score;
             FONT.drawString(finalScoreMsg, (Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
         }
+        public void  renderLevelUpScreen(){
+            FONT.drawString(LEVEL_UP_MES, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
+        }
         public void renderInstructionScreen(Input input) {
             FONT.drawString(INSTRUCTION_MSG, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
             if(input.wasPressed(Keys.S)&& );
-            if (input.wasPressed(Keys.Space)){
+            if (input.wasPressed(Keys.SPACE)){
                 gameOn = true;
             }
         }
@@ -140,11 +146,11 @@ public class ShadowFlap extends AbstractGame {
         if (input.wasPressed(Keys.L)) && timeScale < MAX_SCALE){
             timeScale += 1;
         }
-        if (input.wasPressed(Keys.K)) && timeScale > MIN_SCALE{
+        if (input.wasPressed(Keys.K))&&timeScale > MIN_SCALE{
             timeScale -= 1;
         }
     }
-    if(gameOn && !(LifeBar.getlife() == 0) && !win){
+    if (gameOn && !(LifeBar.getlife() == 0) && !win){
         if(!leveUp){
             updateTimeScale(input);
             if (frameCount % 100 == 0){

@@ -9,7 +9,10 @@ import java.util.List;
 import java.util.Random;
 
 public class PipeSet {
-    private Image PIPE_IMAGE = new Image("res/pipe.png");
+    private final Image PLASTIC_PIPE_IMAGE = new Image("res/level/plasticPipe.png");
+    private final Image STEEL_PIPE_IMAGE = new Image("res/level-1/steelPipe.png");
+    private final Image FLAME_IMAGE = new Image("res/level-1/flame.png");
+    private Image PIPE_IMAGE;
     private final int PIPE_GAP = 168;
     private double pipeSpeed = 5;
     private final double TOP_PIPE_Y;
@@ -23,8 +26,9 @@ public class PipeSet {
     private boolean isPass = false;
     public boolean getIsPass(){return this.isPass;}
     public void setIsPass(boolean isPass){this.isPass = isPass;}
-
-
+    private int CountFrame = 0;
+    private final int FLAME_START = 20;
+    private final int FLAME_END = 50;
     public void renderPipSet(){
         if (! isCollide){
             PIPE_IMAGE.draw(pipeX,TOP_PIPE_Y);
@@ -76,6 +80,22 @@ public class PipeSet {
         return PIPE_IMAGE.getBoundingBoxAt(new Point(pipeX, BOTTOM_PIPE_Y));
 
     }
+    public Rectangle getTopBoxFlame(){
+        if(CountFrame>FLAME_START  && PIPE_IMAGE == STEEL_PIPE_IMAGE){
+            return FLAME_IMAGE.getBoundingBoxAt(new Point(pipeX, TOP_PIPE_Y+Window.getHeight()/2+10));
+        }
+        else {
+            return PIPE_IMAGE.getBoundingBoxAt(new Point(pipeX, TOP_PIPE_Y));
+        }
+    }
+    public Rectangle getBottomBoxFlame(){
+        if(CountFrame>FLAME_START && PIPE_IMAGE == STEEL_PIPE_IMAGE){
+            return FLAME_IMAGE.getBoundingBoxAt(new Point(pipeX,BOTTOM_PIPE_Y-Window.getHeight()/2-10));
+        }
+        else{
+            return PIPE_IMAGE.getBoundingBoxAt(new Point(pipeX, BOTTOM_PIPE_Y));
+        }
+    }
 
     public void updateSpeed(int timeScale){
         pipeSpeed = 5;
@@ -83,9 +103,6 @@ public class PipeSet {
             pipeSpeed = pipeSpeed * 1.5;
         }
         pipeX -= pipeSpeed;
-    }
-    public double getTopBox(){
-        return this.pipeX
     }
 
 }

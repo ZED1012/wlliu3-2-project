@@ -16,12 +16,8 @@ import java.util.Random;
  * @author: WENTAO LIU 1104900
  */
 public class ShadowFlap extends AbstractGame {
-    private final Image PLASTIC_PIPE = new Image("res/level/plasticPipe.png");
-    private final Image STEEL_PIPE = new Image("res/level-1/steelPipe.png");
-    private final Image LEVEL0_BACKGROUND = new Image("C:/Users/13644/Desktop/wlliu3-2-project/res/level-0/background.png");
+    private final Image LEVEL0_BACKGROUND = new Image("res/level-0/background.png");
     private final Image LEVEL1_BACKGROUND = new Image("res/level-1/background.png");
-    private final Image ROCK = new Image("res/level-1/rock.png");
-    private final Image BOMB = new Image("res/level-1/bomb.png");
     private final Font FONT = new Font("res/font/slkscr.ttf", FONT_SIZE);
     private final String INSTRUCTION_MSG = "PRESS SPACE TO START";
     private final String GAME_OVER_MSG = "GAME OVER!";
@@ -44,7 +40,6 @@ public class ShadowFlap extends AbstractGame {
     private final int MIN_SCALE = 1;
     private int frameCount = 0;
     private final double SWITCH_FRAME = 100;
-
     private boolean levelUpCount = false;
     private int levelUpCount = 0;
     private boolean flameCollision = false;
@@ -52,6 +47,7 @@ public class ShadowFlap extends AbstractGame {
     public ShadowFlap() {
         super(1024, 768, "ShadowFlap");
         bird = new Bird();
+        lifebar = new LifeBar(level);
         score = 0;
         gameOn = false;
         collision = false;
@@ -86,6 +82,35 @@ public class ShadowFlap extends AbstractGame {
         }
 
     }
+    public boolean birdOutOfBound() {
+        return (bird.getY() > Window.getHeight()) || (bird.getY() < 0);
+    }
+    public boolean detectCollision(Rectangle birdBox, Rectangle topPipeBox, Rectangle bottomPipeBox) {
+        // check for collision
+        return birdBox.intersects(topPipeBox) ||
+                birdBox.intersects(bottomPipeBox);
+    }
+    public void renderGameOverScreen() {
+        FONT.drawString(GAME_OVER_MSG, (Window.getWidth()/2.0-(FONT.getWidth(GAME_OVER_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
+        String finalScoreMsg = FINAL_SCORE_MSG + score;
+        FONT.drawString(finalScoreMsg, (Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
+    }
+    public void renderWinScreen() {
+        FONT.drawString(CONGRATS_MSG, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
+        String finalScoreMsg = FINAL_SCORE_MSG + score;
+        FONT.drawString(finalScoreMsg, (Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
+    }
+    public void  renderLevelUpScreen(){
+        FONT.drawString(LEVEL_UP_MES, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
+    }
+    public void renderInstructionScreen(Input input) {
+        FONT.drawString(INSTRUCTION_MSG, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
+        if(input.wasPressed(Keys.S)&& );
+        if (input.wasPressed(Keys.SPACE)){
+            gameOn = true;
+        }
+    }
+
 
 
     /**
@@ -111,34 +136,6 @@ public class ShadowFlap extends AbstractGame {
         }
         if (win){renderWinScreen();}
 
-        public boolean birdOutOfBound() {
-            return (bird.getY() > Window.getHeight()) || (bird.getY() < 0);
-        }
-        public boolean detectCollision(Rectangle birdBox, Rectangle topPipeBox, Rectangle bottomPipeBox) {
-            // check for collision
-            return birdBox.intersects(topPipeBox) ||
-                    birdBox.intersects(bottomPipeBox);
-        }
-        public void renderGameOverScreen() {
-            FONT.drawString(GAME_OVER_MSG, (Window.getWidth()/2.0-(FONT.getWidth(GAME_OVER_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
-            String finalScoreMsg = FINAL_SCORE_MSG + score;
-            FONT.drawString(finalScoreMsg, (Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
-        }
-        public void renderWinScreen() {
-            FONT.drawString(CONGRATS_MSG, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
-            String finalScoreMsg = FINAL_SCORE_MSG + score;
-            FONT.drawString(finalScoreMsg, (Window.getWidth()/2.0-(FONT.getWidth(finalScoreMsg)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0))+SCORE_MSG_OFFSET);
-        }
-        public void  renderLevelUpScreen(){
-            FONT.drawString(LEVEL_UP_MES, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
-        }
-        public void renderInstructionScreen(Input input) {
-            FONT.drawString(INSTRUCTION_MSG, (Window.getWidth()/2.0-(FONT.getWidth(CONGRATS_MSG)/2.0)), (Window.getHeight()/2.0-(FONT_SIZE/2.0)));
-            if(input.wasPressed(Keys.S)&& );
-            if (input.wasPressed(Keys.SPACE)){
-                gameOn = true;
-            }
-        }
 
     }
 
@@ -180,11 +177,11 @@ public class ShadowFlap extends AbstractGame {
     public void updatePipeSet(ArrayList<PipeSet>pipeSets, Rectangle birdBox){
         for (PipeSet pipeSet: pipeSets){
             pipeSet.update(timeScale);
-            Rectangle topPipBox = pipeSet getTopBox();
-            Rectangle bottomPipeBox = pipeSet getBottomBox();
+            Rectangle topPipBox = pipeSet.getTopBox();
+            Rectangle bottomPipeBox = pipeSet.getBottomBox();
             collision = detectCollison(birdBox, topPipBox,bottomPipeBox);
             if(collision && !pipeset.getIsCollide()){
-                lifeBar.setlife(lifeBar.getlife() - 1);
+                lifeBar.setlife(LifeBar.getlife() - 1);
                 pipeSet.setIsCollide(true);
             }
             updateScore(pipeSet);

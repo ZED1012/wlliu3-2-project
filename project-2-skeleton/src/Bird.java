@@ -31,7 +31,9 @@ public class Bird {
     }
 
 
-
+    /**
+     *getters
+     */
     public double getY() {
         return y;
     }
@@ -44,5 +46,6 @@ public class Bird {
         return boundingBox;
     }
 
-    public double Sety(){return y;}
+    public void setY(){this.y = y;}
 }
+

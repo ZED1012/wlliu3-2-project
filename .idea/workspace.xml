@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73445150-b702-4349-8bb1-232044fe95b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/Bird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/Bomb.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/LifeBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/LifeBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/PipeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/PipeSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/PlasticPipeSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/Rock.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/ShadowFlap.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/ShadowFlap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/SteelPipe.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-2-skeleton/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-2-skeleton/src/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
